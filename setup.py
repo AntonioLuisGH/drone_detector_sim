@@ -35,9 +35,7 @@ setup(
     
     entry_points={
         'console_scripts': [
-            # This creates an executable named 'drone_controller_node'
-            'drone_controller_node = drone_detector_sim.drone_controller_node:main',
-            
+          
             # NEW: Executable for the BBox publisher node
             'ground_truth_bbox_node = drone_detector_sim.ground_truth_bbox_node:main',
         ],

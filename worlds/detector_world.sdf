@@ -140,38 +140,6 @@
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV</uri>
       <name>target_drone</name>
       <pose>5 0 2 0 0 0</pose>
-      
-      <!-- Attach the controller plugin directly to this model -->
-      <plugin filename="libignition-gazebo-velocity-control-system.so"
-              name="ignition::gazebo::systems::VelocityControl">
-        <!-- This topic MUST match the bridge remapping -->
-        <topic>/model/target_drone/cmd_vel</topic>
-        <link_name>X3/base_link</link_name>
-        <linear_velocity>
-          <x>
-            <min_cmd>-5.0</min_cmd>
-            <max_cmd>5.0</max_cmd>
-            <p_gain>0.5</p_gain>
-          </x>
-          <y>
-            <min_cmd>-5.0</min_cmd>
-            <max_cmd>5.0</max_cmd>
-            <p_gain>0.5</p_gain>
-          </y>
-          <z>
-            <min_cmd>-5.0</min_cmd>
-            <max_cmd>5.0</max_cmd>
-            <p_gain>0.5</p_gain>
-          </z>
-        </linear_velocity>
-        <angular_velocity>
-          <z>
-            <min_cmd>-1.0</min_cmd>
-            <max_cmd>1.0</max_cmd>
-            <p_gain>0.5</p_gain>
-          </z>
-        </angular_velocity>
-      </plugin>
     </include>
     
   </world>
