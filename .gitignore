@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+# Testing / tooling
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+dist/
+build/
+wheelhouse/
+
+# Virtual environments
+.env
+.envrc
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+.python-version
+
+# IDE / editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ROS 2 / colcon
+build/
+install/
+log/
+build_isolated/
+devel_isolated/
+install_isolated/
+local_setup.*
+.rosinstall
+.rosinstall.*
+
+# Generated / project files
+frames.pdf
+*.log
+.project
+.pydevproject
+.ropeproject
+.mypy_cache/
+
+# Misc
+node_modules/
+.vagrant/
+.terraform/
