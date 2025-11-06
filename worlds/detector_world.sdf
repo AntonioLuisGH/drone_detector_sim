@@ -25,26 +25,6 @@
       <do_ignore_entities_in_lidar_link>true</do_ignore_entities_in_lidar_link>
     </plugin>
 
-    <!-- *** NEW PLUGIN FOR TF *** -->
-    <!-- This plugin automatically broadcasts TF transforms for all models. -->
-    <!-- This replaces our ground_truth_tf_node.py -->
-    <plugin filename="libignition-gazebo-ros-transform-broadcaster-system.so"
-            name="ignition::gazebo::systems::RosTransformBroadcaster">
-      <!-- We can optionally list the frames we care about -->
-      <frame>
-        <model>
-          <name>target_drone</name>
-        </model>
-      </frame>
-      <frame>
-        <model>
-          <name>lidar_station</name>
-          <link>lidar_link</link>
-        </model>
-      </frame>
-    </plugin>
-    <!-- *** END NEW PLUGIN *** -->
-
     <!-- 5. Scene Setup -->
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>

@@ -33,22 +33,28 @@ def generate_launch_description():
         launch_arguments={'gz_args': f'-r {world_file}'}.items()
     )
 
-    # --- Bridges ---
-    
-    # Lidar Bridge (GZ -> ROS)
+   # Lidar Bridge (GZ -> ROS)
     lidar_bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=['/lidar/avia@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked'],
         output='screen'
     )
-    
+
     # Pose Bridge (GZ -> ROS)
     pose_bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[f'/world/drone_world/pose/info@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'],
         output='screen'
+    )
+
+    # Manually publish the static transform for the LiDAR
+    # Pose is from SDF: <pose>0 0 0.5 0 0 0</pose>
+    static_lidar_tf = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        arguments=['0', '0', '0.5', '0', '0', '0', 'drone_world', 'lidar_link']
     )
 
     # --- Nodes ---
@@ -74,6 +80,7 @@ def generate_launch_description():
         start_gazebo,
         lidar_bridge,
         pose_bridge,
+        static_lidar_tf,
         ground_truth_bbox_node,
         start_rviz
     ])

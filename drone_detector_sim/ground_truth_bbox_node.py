@@ -44,7 +44,7 @@ class GroundTruthBboxPublisher(Node):
         for transform in msg.transforms:
             if transform.child_frame_id == DRONE_MODEL_NAME:
                 marker = Marker()
-                marker.header.frame_id = "world"
+                marker.header.frame_id = "drone_world"
                 marker.header.stamp = current_time
                 marker.ns = "drone"
                 marker.id = 0
