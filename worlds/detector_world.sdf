@@ -120,6 +120,7 @@
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV</uri>
       <name>target_drone</name>
       <pose>5 0 2 0 0 0</pose>
+      <static>false</static> <!-- ADD THIS LINE -->
     </include>
     
   </world>

@@ -21,7 +21,7 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='antonio',
+    maintainer='AntonioLuisGH',
     maintainer_email='user@todo.todo',
     description='Simulation for detecting a drone with a lidar.',
     license='Apache-2.0',
@@ -35,9 +35,8 @@ setup(
     
     entry_points={
         'console_scripts': [
-          
-            # NEW: Executable for the BBox publisher node
             'ground_truth_bbox_node = drone_detector_sim.ground_truth_bbox_node:main',
+            'drone_oscillator_node = drone_detector_sim.drone_oscillator_node:main',
         ],
     },
 )
