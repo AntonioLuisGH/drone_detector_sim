@@ -106,7 +106,7 @@
               <min>0.1</min>
               <max>200</max>
             </range>
-            <update_rate>10</update_rate>
+            <update_rate>20</update_rate>
             <topic>lidar/avia</topic>
             <frame>lidar_link</frame>
             <pattern_preset>Livox Avia</pattern_preset>
@@ -119,8 +119,8 @@
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV</uri>
       <name>target_drone</name>
+      <static>true</static>
       <pose>5 0 2 0 0 0</pose>
-      <static>false</static> <!-- ADD THIS LINE -->
     </include>
     
   </world>
