@@ -21,8 +21,8 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='AntonioLuisGH',
-    maintainer_email='user@todo.todo',
+    maintainer='Antonio Luis Gonzalez Hernandez',
+    maintainer_email='antonioluissgh@gmail.com',
     description='Simulation for detecting a drone with a lidar.',
     license='Apache-2.0',
     
