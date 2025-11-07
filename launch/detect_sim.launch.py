@@ -49,22 +49,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Bridge for drone velocity commands (ROS -> GZ)
-    # Listens to ROS topic /model/target_drone/cmd_vel [geometry_msgs/msg/Twist]
-    # Publishes to GZ topic /model/target_drone/cmd_vel [gz.msgs.Twist]
-    drone_vel_bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        # --- BEFORE ---
-        # arguments=['/model/target_drone/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist'],
-        # --- AFTER ---
-        # We must map the ROS topic to the *full* Gazebo topic name, including the world.
-        arguments=['/model/target_drone/cmd_vel@geometry_msgs/msg/Twist]' +
-                   '/world/drone_world/model/target_drone/cmd_vel@gz.msgs.Twist'],
-        output='screen'
-    )
-
-
     # Manually publish the static transform for the LiDAR
     # Pose is from SDF: <pose>0 0 0.5 0 0 0</pose>
     static_lidar_tf = Node(
@@ -90,16 +74,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    start_drone_oscillator = Node(
-        package='drone_detector_sim',
-        executable='drone_oscillator_node',
-        output='screen',
-        parameters=[
-            {'speed': 0.9},
-            {'duration': 5.0}
-        ]
-    )
-
     # --- Launch Description ---
     return LaunchDescription([
         set_env_var,
@@ -107,8 +81,6 @@ def generate_launch_description():
         lidar_bridge,
         pose_bridge,
         static_lidar_tf,
-        drone_vel_bridge,
         ground_truth_bbox_node,
         start_rviz,
-        start_drone_oscillator
     ])

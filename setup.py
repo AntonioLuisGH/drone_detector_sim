@@ -36,7 +36,6 @@ setup(
     entry_points={
         'console_scripts': [
             'ground_truth_bbox_node = drone_detector_sim.ground_truth_bbox_node:main',
-            'drone_oscillator_node = drone_detector_sim.drone_oscillator_node:main',
         ],
     },
 )
