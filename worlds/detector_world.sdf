@@ -63,8 +63,32 @@
       </link>
     </model>
     
+    <!-- <model name="sensor_distance_limit"> 
+      <static>true</static>
+      
+      <pose>0 0 0 0 0 0</pose>
+      
+      <link name="sphere_link">
+        
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>70</radius>
+            </sphere>
+          </geometry>
+          
+          <material>
+            <ambient>0.0 0.5 1.0 0.3</ambient>
+            <diffuse>0.0 0.5 1.0 0.3</diffuse>
+            <specular>0.5 0.5 0.5 0.3</specular>
+          </material>
+        </visual>
+        
+        </link>
+    </model> -->
+
     <model name="lidar_station">
-      <pose>0 0 0.5 0 -0.524 0</pose>
+      <pose>0 0 0.5 0 -0.785398 0</pose>
       <static>true</static>
       <link name="lidar_link">
         <inertial>
@@ -110,7 +134,7 @@
               <min>0.1</min>
               <max>200</max>
             </range>
-            <update_rate>20</update_rate>
+            <update_rate>40</update_rate>
             <topic>lidar/avia</topic>
             <frame>lidar_link</frame>
             <pattern_preset>Livox Avia</pattern_preset>

@@ -54,7 +54,7 @@ def generate_launch_description():
     static_lidar_tf = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
-        arguments=['0', '0', '0.5', '0', '-0.524', '0', 'drone_world', 'lidar_link']
+        arguments=['0', '0', '0.5', '0', '-0.785398', '0', 'drone_world', 'lidar_link']
     )
 
     # --- Nodes ---
